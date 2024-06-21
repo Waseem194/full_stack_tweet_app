@@ -1,0 +1,7 @@
+# Languages
+- Python
+
+
+# Framework
+
+- Django
