@@ -12,17 +12,30 @@ Edit Tweet
 {% else %}
 Create a Tweet
 {% endif %}
-<form class='form mt-3 p-4' action="" method="post" enctype="multipart/form-data">
-{% csrf_token %} 
-<div class="m-6">
-{{form.text}}
 
-</div>
-<div class="input-group mb-3 ">
-{{form.photo}}
-</div>
+
+<div class="container mt-5">
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.text.label_tag }}
+            {{ form.text }}
+        </div>
+        <div class="mb-3">
+            {{ form.photo.label_tag }}
+            {{ form.photo }}
+        </div>
 <button class="btn btn-warning mb-5" type="submit">Submit</button>
+    
 </form>
+</div>
 <a href="{%url 'tweet_list'%}" class="btn btn-success">Back to tweet list</a>
 </h2>
+
+
+
+
+
+
 {% endblock %}
