@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+full stack app
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center  mb-10">Wellcome to fullstack app</h1>
+
+<h2>{% if form.instance.pk %} 
+Edit Tweet 
+{% else %}
+Create a Tweet
+{% endif %}
+<form class='form mt-3 p-4' action="" method="post" enctype="multipart/form-data">
+{% csrf_token %} 
+<div class="m-6">
+{{form.text}}
+
+</div>
+<div class="input-group mb-3 ">
+{{form.photo}}
+</div>
+<button class="btn btn-warning mb-5" type="submit">Submit</button>
+</form>
+<a href="{%url 'tweet_list'%}" class="btn btn-success">Back to tweet list</a>
+</h2>
+{% endblock %}
