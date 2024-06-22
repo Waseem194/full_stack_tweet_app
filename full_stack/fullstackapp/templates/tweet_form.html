@@ -15,7 +15,9 @@ Create a Tweet
 
 
 <div class="container mt-5">
+        <div class="form-container">
     
+
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="mb-3">
@@ -29,6 +31,7 @@ Create a Tweet
 <button class="btn btn-warning mb-5" type="submit">Submit</button>
     
 </form>
+</div>
 </div>
 <a href="{%url 'tweet_list'%}" class="btn btn-success">Back to tweet list</a>
 </h2>
